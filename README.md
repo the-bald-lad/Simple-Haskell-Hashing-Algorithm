@@ -1,2 +1,2 @@
-# Simple Haskell Hashing Algorythm
- A very simple haskell hashing algorythm
+# Simple Haskell Hashing Algorithm
+ A very simple haskell hashing algorithm

@@ -27,10 +27,11 @@ main = do
     putStrLn "Enter a word: "   
     inp       <- getLine
     randWords <- select [1 :: Int,0,1,0,1] <$> randomString 5
-    let salt     = removeSpace randWords
+    let file     = "hashes.txt"
+        salt     = removeSpace randWords
         merge    = inp ++ salt
         bytes    = bytestr merge
         bs       = SHA.hash bytes
         hash     = concatMap (`showHex` "") $ BS.unpack bs
-
+    writeFile file hash
     putStrLn hash
